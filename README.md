@@ -37,7 +37,7 @@ The ultimate goal is to have a keyboard layout that is useful for your very own 
 
 - These middle keys will also act as <kbd>Left Ctrl</kbd> and <kbd>Right Ctrl</kbd> when held down, because I intensively use <kbd>Ctrl</kbd> and <kbd>Shift</kbd> combined with the arrow/move keys to make text/range selections in documents, emails and spreadsheets, so it will allow me to easily reach those combinations with my index and thumb fingers while using the `MOVE` layer.
 
-- Not being a developer, I somewhat _relegated_ the brackets (<kbd>\[ \]</kbd> <kbd>]</kbd> <kbd>\{ \}</kbd> <kbd>}</kbd>) to a less important position, though easily accessible and with auto-closing enabled via [`Tap Dance`](https://docs.qmk.fm/#/feature_tap_dance) or [`Send String`](https://docs.qmk.fm/#/feature_send_string) functions, as I only left one of the keys visible.
+- Not being a developer, I somewhat _relegated_ the brackets (<kbd>\[ \]</kbd> <kbd>\{ \}</kbd>) to a less important position, though easily accessible and with auto-closing enabled via [`Tap Dance`](https://docs.qmk.fm/#/feature_tap_dance) or [`Send String`](https://docs.qmk.fm/#/feature_send_string) functions, as I only left one of the keys visible.
 
 - [GraveEscape](https://docs.qmk.fm/#/feature_grave_esc) is also used to reduce number of keys, as well as [CapsWord](https://docs.qmk.fm/#/feature_caps_word) and CapsLock in the same key using [tap dance](https://docs.qmk.fm/#/feature_tap_dance).
 
