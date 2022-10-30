@@ -76,7 +76,7 @@ Further info on keycodes is available in the docs [here](https://docs.qmk.fm/#/k
 
 ### NUMPAD layer
 
-Activated by holding `TG(_NUMPAD)` modifier key down. Simply release to return to `QWERTY` layer.
+Activated by holding `MO(_NUMPAD)` modifier key down. Simply release to return to `QWERTY` layer.
 
 ```
 /* NUMPAD
