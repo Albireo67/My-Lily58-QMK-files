@@ -13,7 +13,6 @@ enum layer_number {
 };
 
 enum custom_keycodes {
-    //ACNT = SAFE_RANGE,
     //DBRC,
     DCBR = SAFE_RANGE,
     DPRN,
@@ -55,8 +54,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
  * |      |  F1  |  F2  |  F3  |  F4  |      |-------|    |-------|      |   0  |   ,  |   .  |      |Enter |
  * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
- *                   | LGUI | OSMod| NUM  | /   +   /       \   +  \  | MOVE | OSMod| LGUI |
- *                   |      | LAlt | PAD  |/ Enter /         \ Space\ |      | AltGR| (APP)|
+ *                   | LGUI | OSMod|      | /   +   /       \   +  \  |  ADJ | OSMod| LGUI |
+ *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
  *                   `----------------------------'           '------''--------------------'
  */
 
@@ -78,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
  * |      |      |      | Wh_D |      |      |-------|    |-------|      | End  | Ins  | PgDn |      |{ & } |
  * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
- *                   | LGUI | OSMod| NUM  | /   +   /       \   +  \  | MOVE | OSMod| LGUI |
- *                   |      | LAlt | PAD  |/ Enter /         \ Space\ |      | AltGR| (APP)|
+ *                   | LGUI | OSMod| ADJ  | /   +   /       \   +  \  |      | OSMod| LGUI |
+ *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
  *                   `----------------------------'           '------''--------------------'
  */
 
