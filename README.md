@@ -25,9 +25,11 @@ The ultimate goal is to have a keyboard layout that is useful for your very own 
 
 ## Design choices made
 
-- Given the challenges to find a set of decent quality keycaps in my native language (Spanish) with enough 1-unit symbol/mod keys, I went ahead and got a US English set instead, and then used QMK's [US-International keymap](https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_us_international.h) in order to access our beloved <kbd>Ñ</kbd> (like in España),  accented vowels (<kbd>á</kbd> <kbd>é</kbd> <kbd>í</kbd> <kbd>ó</kbd> <kbd>ú</kbd> <kbd>ü</kbd>), and symbols <kbd>¡</kbd> <kbd>¿</kbd> using <kbd>AltGr</kbd>. Worth noting that this keymap would also help typing in  other non-English languages, such as French, German, etc. If you happen to find a decent keycaps set in your language, you will be better off using the relevant keymap from [here](https://github.com/qmk/qmk_firmware/tree/master/quantum/keymap_extras).
+- Given the challenges to find a set of decent quality keycaps in my native language (Spanish) with enough 1-unit symbol/mod keys, I went ahead and got a US English set instead, and then used QMK's [US-International keymap](https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_us_international.h) in order to access our beloved <kbd>Ñ</kbd> (like in España),  accented vowels (<kbd>á</kbd> <kbd>é</kbd> <kbd>í</kbd> <kbd>ó</kbd> <kbd>ú</kbd> <kbd>ü</kbd>), and symbols <kbd>¡</kbd> <kbd>¿</kbd>. Worth noting that this keymap would also help typing in  other non-English languages, such as French, German, etc. If you happen to find a decent keycaps set in your language, you will be better off using the relevant keymap from [here](https://github.com/qmk/qmk_firmware/tree/master/quantum/keymap_extras).
 
 - The above choice **requires your operating system to have the keyboard layout set to** `US international (with dead keys)` in Linux or `US international` in Windows **to properly function** as to recognize the keycodes sent by this custom firmware. Otherwise, you will be lost trying to find where the appropriate symbols are actually located. 
+
+- Spanish <kbd>Ñ</kbd> is accessible with a long press on regular <kbd>N</kbd> or using <kbd>AltGr</kbd>+<kbd>N</kbd>. Inverted exclamation <kbd>¡</kbd> and interrogation <kbd>¿</kbd> signs are accessible with a long press on regular <kbd>1</kbd> and <kbd>/</kbd> respectively, or using <kbd>AltGr</kbd> with them. Regular exclamation <kbd>!</kbd> and interrogation <kbd>?</kbd> signs are accessible in the same keys using <kbd>Shift</kbd>. 
 
 - I've moved some symbols (e.g. <kbd>|</kbd>, <kbd>/</kbd>, <kbd>?</kbd>, <kbd>\\</kbd>) from their standard location for personal convenience, which required finding a "flattish" keycap profile across all rows. [XDA profile](https://www.reddit.com/r/MechanicalKeyboards/comments/j484j5/keycap_profiles_i_compiled_a_direct_comparison/) was the choice I made.
 
@@ -59,7 +61,7 @@ Further info on keycodes is available in the docs [here](https://docs.qmk.fm/#/k
 ```
 /* QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | GESC |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  /   |
+ * | GESC |  1   |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  /   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |  Q   |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  =   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -89,7 +91,7 @@ Activated by holding `MO(_NUMPAD)` modifier key down. Simply release to return t
  * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
  * |      |  F1  |  F2  |  F3  |  F4  |      |-------|    |-------|      |   0  |   ,  |   .  |      |Enter |
  * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
- *                   | LGUI | OSMod|      | /   +   /       \   +  \  |  ADJ | OSMod| LGUI |
+ *                   | LGUI | OSMod|      | /   +   /       \   +  \  | ADJ  | OSMod| LGUI |
  *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
  *                   `----------------------------'           '------''--------------------'
  */
