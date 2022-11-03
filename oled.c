@@ -20,7 +20,6 @@ void render_wpm_counter(void) {
 }
 
 
-
 // Luna pet code starts here
 /* settings */
 #    define MIN_WALK_SPEED      10
@@ -178,9 +177,10 @@ void render_status_main(void) {
 void render_status_secondary(void) {
     oled_write_ln("Q M K", false);
     oled_write_ln("", false);
-    // Capturing CAPWORD state
-    void caps_word_set_user(bool active) {
-    if (active) {
+        oled_set_cursor(0, 4);
+    // Capturing CAPS state
+    //void caps_word_set_user(bool active) {
+    if (is_caps_word_on()) {
         oled_write_ln("-CAP-", false);
         oled_write_ln("WORD", false);
         oled_write_ln("IS ON", false);
@@ -189,15 +189,18 @@ void render_status_secondary(void) {
         oled_write_ln("LOCK", false);
         oled_write_ln("IS ON", false);
     } else {
-        oled_write_ln("Lily", false);
-        oled_write_ln(" 58", false);
-        oled_write_ln("Rev1", false);
+        oled_write_ln("Lilly", false);
+        oled_write_ln("58 v1", false);
+        oled_write_ln("", false);
      }
-    }
-    oled_set_cursor(0, 10);
+    //return false;
+    oled_set_cursor(0, 14);
     oled_write_ln("2022", false);
     oled_write_ln("jfma", false);
-};
+}
+
+
+bool oled_scroll_off(void);
 
 bool oled_task_user(void) {
     current_wpm   = get_current_wpm();
@@ -218,6 +221,7 @@ bool oled_task_user(void) {
     }
     return false;
 }
+
 
 /* //This section has been moved to keymap.c
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -242,3 +246,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 */
+
