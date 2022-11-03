@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | GESC |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  /   |
+ * | GESC |  1   |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  /   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |  Q   |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  =   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QWERTY] = LAYOUT(
-  QK_GESC, US_1, US_2, US_3, US_4, US_5,                      US_6, US_7, US_8, US_9, US_0, US_SLSH,
+  QK_GESC, TD(TD_EXC), US_2, US_3, US_4, US_5,                      US_6, US_7, US_8, US_9, US_0, TD(TD_INT),
   KC_TAB,  US_Q, US_W, US_E, US_R, US_T,                      US_Y, US_U, US_I, US_O, US_P, US_EQL,
   CAPSWRD, US_A, US_S, US_D, US_F, US_G,                      US_H, US_J, US_K, US_L, US_ACUT, US_MINS,
   US_BSLS, US_Z, US_X, US_C, US_V, US_B, LCTL_T(KC_DEL), RCTL_T(KC_BSPC), TD(TD_N), US_M, US_COMM, US_DOT, US_SCLN, TD(TD_BRC),
@@ -54,14 +54,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
  * |      |  F1  |  F2  |  F3  |  F4  |      |-------|    |-------|      |   0  |   ,  |   .  |      |Enter |
  * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
- *                   | LGUI | OSMod|      | /   +   /       \   +  \  |  ADJ | OSMod| LGUI |
+ *                   | LGUI | OSMod|      | /   +   /       \   +  \  | ADJ  | OSMod| LGUI |
  *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
  *                   `----------------------------'           '------''--------------------'
  */
 
 [_NUMPAD] = LAYOUT(
-  KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_INS,                     KC_CIRC, KC_P7, US_8, US_9, DPRN, KC_PSLS,
-  KC_TRNS, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,                           KC_NO, KC_P4, KC_P5, KC_P6, KC_PAST, KC_PEQL,
+  KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_INS,                     KC_CIRC, KC_P7, US_8, KC_P9, DPRN, KC_PSLS,
+  KC_TRNS, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,                           KC_NO, KC_P4, KC_P5, KC_P6, KC_PAST, US_EQL,
   KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO,                           KC_NO, KC_P1, KC_P2, KC_P3, KC_PPLS, KC_PMNS,
   KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO, KC_TRNS,           KC_TRNS,  KC_NO, KC_P0, US_COMM, US_DOT, KC_NO, KC_PENT,
                   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS,  MO(_ADJUST), KC_TRNS, KC_TRNS
