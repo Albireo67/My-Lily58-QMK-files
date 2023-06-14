@@ -144,7 +144,7 @@ void dance_n_reset(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 
-// Writes inverted exclamation '¡' when 1 is held down
+// Writes Spanish double exclamation '¡' and '!', then moves in-between,  when 1 is held down
 // Keyboard layout MUST BE in US_INTERNATIONAL !!!
 void on_dance_exc(qk_tap_dance_state_t *state, void *user_data) {
     if(state->count == 3) {
@@ -161,7 +161,7 @@ void dance_exc_finished(qk_tap_dance_state_t *state, void *user_data) {
     dance_state[0].step = dance_step(state);
     switch (dance_state[0].step) {
         case SINGLE_TAP: register_code16(US_1); break;
-        case SINGLE_HOLD: register_code16(ALGR(US_1)); break;
+        case SINGLE_HOLD: register_code16(ALGR(US_1)); unregister_code16(ALGR(US_1)); register_code16(LSFT(US_1)); unregister_code16(LSFT(US_1)); register_code16(KC_LEFT); break;
         case DOUBLE_TAP: register_code16(US_1); register_code16(US_1); break;
     }
 }
@@ -170,14 +170,14 @@ void dance_exc_reset(qk_tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[0].step) {
         case SINGLE_TAP: unregister_code16(US_1); break;
-        case SINGLE_HOLD: unregister_code16(ALGR(US_1)); break;
+        case SINGLE_HOLD: unregister_code16(ALGR(US_1)); unregister_code16(LSFT(US_1)); unregister_code16(KC_LEFT); break;
         case DOUBLE_TAP: unregister_code16(US_1); unregister_code16(US_1); break;
     }
     dance_state[0].step = 0;
 }
 
 
-// Writes inverted interrogation '¿' when '/' is held down
+// Writes Spanish double interrogation '¿' and '?', then moves in-between,  when '/' is held down
 // Keyboard layout MUST BE in US_INTERNATIONAL !!!
 void on_dance_int(qk_tap_dance_state_t *state, void *user_data) {
     if(state->count == 3) {
@@ -194,7 +194,7 @@ void dance_int_finished(qk_tap_dance_state_t *state, void *user_data) {
     dance_state[0].step = dance_step(state);
     switch (dance_state[0].step) {
         case SINGLE_TAP: register_code16(US_SLSH); break;
-        case SINGLE_HOLD: register_code16(ALGR(US_SLSH)); break;
+        case SINGLE_HOLD: register_code16(ALGR(US_SLSH)); unregister_code16(ALGR(US_SLSH)); register_code16(LSFT(US_SLSH)); unregister_code16(LSFT(US_SLSH)); register_code16(KC_LEFT); break;
         case DOUBLE_TAP: register_code16(US_SLSH); register_code16(US_SLSH); break;
     }
 }
@@ -203,7 +203,7 @@ void dance_int_reset(qk_tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[0].step) {
         case SINGLE_TAP: unregister_code16(US_SLSH); break;
-        case SINGLE_HOLD: unregister_code16(ALGR(US_SLSH)); break;
+        case SINGLE_HOLD: unregister_code16(ALGR(US_SLSH)); unregister_code16(LSFT(US_SLSH)); unregister_code16(KC_LEFT); break;
         case DOUBLE_TAP: unregister_code16(US_SLSH); unregister_code16(US_SLSH); break;
     }
     dance_state[0].step = 0;
@@ -222,7 +222,7 @@ void dance_brc_finished(qk_tap_dance_state_t *state, void *user_data) {
     switch (dance_state[3].step) {
         case SINGLE_TAP: register_code16(US_LBRC); break;
         case SINGLE_HOLD: register_code16(US_RBRC); break;
-        case DOUBLE_TAP: register_code16(US_LBRC); register_code16(US_RBRC); break;
+        case DOUBLE_TAP: register_code16(US_LBRC); register_code16(US_RBRC); unregister_code16(US_RBRC); register_code16(KC_LEFT); break;
     }
 }
 
@@ -231,7 +231,7 @@ void dance_brc_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (dance_state[3].step) {
         case SINGLE_TAP: unregister_code16(US_LBRC); break;
         case SINGLE_HOLD: unregister_code16(US_RBRC); break;
-        case DOUBLE_TAP: unregister_code16(US_LBRC); unregister_code16(US_RBRC); register_code16(KC_LEFT); unregister_code16(KC_LEFT); break;
+        case DOUBLE_TAP: unregister_code16(US_LBRC); unregister_code16(US_RBRC); unregister_code16(KC_LEFT); break;
     }
     dance_state[3].step = 0;
 }
