@@ -29,7 +29,8 @@ The ultimate goal is to have a keyboard layout that is useful for your very own 
 
 - The above choice **requires your operating system to have the keyboard layout set to** `US international (with dead keys)` in Linux or `US international` in Windows **to properly function** as to recognize the keycodes sent by this custom firmware. Otherwise, you will be lost trying to find where the appropriate symbols are actually located. 
 
-- Spanish <kbd>Ñ</kbd> is accessible with a long press on regular <kbd>N</kbd> or using <kbd>AltGr</kbd>+<kbd>N</kbd>. Inverted exclamation <kbd>¡</kbd> and interrogation <kbd>¿</kbd> signs are accessible with a long press on regular <kbd>1</kbd> and <kbd>/</kbd> respectively, or using <kbd>AltGr</kbd> with them. Regular exclamation <kbd>!</kbd> and interrogation <kbd>?</kbd> signs are accessible in the same keys using <kbd>Shift</kbd>. 
+- Spanish <kbd>Ñ</kbd> is accessible with a long press on regular <kbd>N</kbd> or using <kbd>AltGr</kbd>+<kbd>N</kbd>. Inverted exclamation <kbd>¡</kbd> and interrogation <kbd>¿</kbd> signs are accessible using <kbd>AltGr</kbd> with them. Regular exclamation <kbd>!</kbd> and interrogation <kbd>?</kbd> signs are accessible in the same keys using <kbd>Shift</kbd>. Opening and closing exclamation
+<kbd>¡!</kbd> and interrogation signs <kbd>¿?</kbd> are accessible with a long press on regular <kbd>1</kbd> and <kbd>/</kbd> respectively, with the cursor moving inside them.
 
 - I've moved some symbols (e.g. <kbd>|</kbd>, <kbd>/</kbd>, <kbd>?</kbd>, <kbd>\\</kbd>) from their standard location for personal convenience, which required finding a "flattish" keycap profile across all rows. [XDA profile](https://www.reddit.com/r/MechanicalKeyboards/comments/j484j5/keycap_profiles_i_compiled_a_direct_comparison/) was the choice I made.
 
