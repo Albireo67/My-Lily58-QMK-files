@@ -125,6 +125,8 @@ Activated by holding `MO(_MOVE)` modifier key down. Simply release to return to 
 
 Activated by simultaneously holding `_MOVE` and `_NUMPAD` modifier keys down.
 
+Print Screen <kbd>PrtScr</kbd> is accessible in letter P on this layer.
+
 No need for RGB/Backlight adjustments in a Lily58 Classic version, so just added Volume controls <kbd>Mute</kbd>  <kbd>Vol Up</kbd>  <kbd>Vol Down</kbd>.
 
 A keyboard <kbd>Reset</kbd> is also added at a difficult to reach position, to avoid accidental activation, though the PCB has a physical reset button.
@@ -134,13 +136,13 @@ A keyboard <kbd>Reset</kbd> is also added at a difficult to reach position, to a
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |Reset |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |                    |      |      |      |      |PrtScr|      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | Mute | Vol- | Vol+ |      |-------.    ,-------|      |      |      |      |      |      |
- * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
+ * |      |      | Mute | Vol- | Vol+ |      |-------,    ,-------|      |      |      |      |      |      |
+ * |------+------+------+------+------+------|  Ctrl |    |  Ctrl |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /       /       \      \  |      |      |      |
+ *                   |      |      |      | /Shift  /       \Shift \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
