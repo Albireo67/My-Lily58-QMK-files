@@ -22,9 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Select hand configuration */
 
-#define MASTER_LEFT
-//define MASTER_RIGHT
-// #define EE_HANDS
+//#define MASTER_LEFT
+#define MASTER_RIGHT
+//#define EE_HANDS
 
 //N-Key Rollover may be turned on here
 #define FORCE_NKRO
@@ -45,15 +45,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_MAX_SPEED 1
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 70
 
-// Remove default font
-//#undef OLED_FONT_H
-
 #define OLED_BRIGHTNESS 150 // Values 0 - 255
 #define OLED_TIMEOUT 120000  // Helps reduce OLED Burn-in. Time in ms.
-//#define OLED_SCROLL_TIMEOUT 60000 // Helps reduce OLED Burn-in. Set to 0 to disable.
-// #define OLED_FONT_H "keyboards/lily58/keymaps/Albireo67/my_glcdfont.c"
+#define OLED_SCROLL_TIMEOUT 60000 // Helps reduce OLED Burn-in. Set to 0 to disable.
+#define OLED_FONT_H "keyboards/lily58/keymaps/Albireo67/my_glcdfont.c"
 
-// No RGB LEDs in my board at present
+
+// My Lily58 Classic do not have any RGB LEDs, so don´t need this section
 /*
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
@@ -62,10 +60,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_HUE_STEP 10
 #define RGBLIGHT_SAT_STEP 17
 #define RGBLIGHT_VAL_STEP 17
-*/
-
 // Underglow
-/*
 #undef RGBLED_NUM
 #define RGBLED_NUM 14    // Number of LEDs
 #define RGBLIGHT_ANIMATIONS

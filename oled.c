@@ -43,6 +43,7 @@ led_t led_usb_state;
 bool isSneaking = false;
 bool isJumping  = false;
 bool showedJump = true;
+bool caps_word = false;
 
 /* logic */
 static void render_luna(int LUNA_X, int LUNA_Y) {
@@ -175,28 +176,56 @@ void render_status_main(void) {
 }
 
 void render_status_secondary(void) {
-    oled_write_ln("Q M K", false);
+    oled_write_ln(" QMK ", false);
+    oled_write_ln("=====", false);
+    oled_set_cursor(0, 5);
     oled_write_ln("", false);
-        oled_set_cursor(0, 4);
-    // Capturing CAPS state
-    //void caps_word_set_user(bool active) {
-    if (is_caps_word_on()) {
+    oled_write_ln("Lily", false);
+    oled_write_ln("58 v1", false);
+    oled_write_ln("", false);
+    oled_write_ln("=====", false);
+
+    // Capturing CAPS_WORD state
+    void caps_word_set_user(bool active) {
+    oled_set_cursor(0, 5);
+        if (active) {
+        oled_write_ln("+++++", false);
         oled_write_ln("-CAP-", false);
         oled_write_ln("WORD", false);
         oled_write_ln("IS ON", false);
+        oled_write_ln("+++++", false);
+    } else {
+        oled_write_ln("", false);
+        oled_write_ln("Lilly", false);
+        oled_write_ln("58 v1", false);
+        oled_write_ln("", false);
+        oled_write_ln("=====", false);
+     }
+}
+/*
+    if (caps_word) {
+        oled_write_ln("+++++", false);
+        oled_write_ln("-CAP-", false);
+        oled_write_ln("WORD", false);
+        oled_write_ln("IS ON", false);
+        oled_write_ln("+++++", false);
     } else if (led_usb_state.caps_lock) {
+        oled_write_ln("+++++", false);
         oled_write_ln("CAPS", false);
         oled_write_ln("LOCK", false);
         oled_write_ln("IS ON", false);
+        oled_write_ln("+++++", false);
     } else {
+        oled_write_ln("", false);
         oled_write_ln("Lilly", false);
         oled_write_ln("58 v1", false);
         oled_write_ln("", false);
      }
-    //return false;
+*/
+     //return false;
     oled_set_cursor(0, 14);
     oled_write_ln("2022", false);
-    oled_write_ln("jfma", false);
+    oled_write_ln("lnxd0", false);
 }
 
 

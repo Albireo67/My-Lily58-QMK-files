@@ -1,15 +1,14 @@
 #pragma once
 
-// Keyboard layout MUST BE in US_INTERNATIONAL !!!
+// Keyboard layout MUST BE in US_INTERNATIONAL (with dead keys) !!!
 
 enum {
-    TD_CAPS,
     TD_APP,
     TD_N,
     TD_EXC,
     TD_INT,
     TD_BRC,
-    /*TD_Z,
+/*    TD_Z,
     TD_X,
     TD_C,
     TD_V,
@@ -17,7 +16,7 @@ enum {
     TD_A,
     TD_Q,
     TD_W,
-    */
+   */
 };
 
 typedef struct {
@@ -49,36 +48,6 @@ uint8_t dance_step(qk_tap_dance_state_t *state) {
     return MORE_TAPS;
 }
 
-
-// TO-DO  THIS ONE IS NOT WORKING AS EXPECTED
-// Combined Caps Lock and Caps Word actions
-void on_dance_caps(qk_tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(KC_LSFT);
-    }
-    if(state->count > 3) {
-        tap_code16(KC_LSFT);
-    }
-}
-
-void dance_caps_finished(qk_tap_dance_state_t *state, void *user_data) {
-    dance_state[1].step = dance_step(state);
-    switch (dance_state[1].step) {
-        case SINGLE_TAP: register_code16(CAPSWRD); break;
-        case SINGLE_HOLD: register_code16(KC_CAPS); break;
-        //case DOUBLE_TAP: register_code16(KC_CAPS); break;
-    }
-}
-
-void dance_caps_reset(qk_tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[1].step) {
-        case SINGLE_TAP: unregister_code16(CAPSWRD); break;
-        case SINGLE_HOLD: unregister_code16(KC_CAPS); break;
-        //case DOUBLE_TAP: unregister_code16(KC_CAPS); break;
-    }
-    dance_state[1].step = 0;
-}
 
 // LGUI on single tap and single hold ;  KC_APP on double tap
 void on_dance_app(qk_tap_dance_state_t *state, void *user_data) {
@@ -236,9 +205,8 @@ void dance_brc_reset(qk_tap_dance_state_t *state, void *user_data) {
     dance_state[3].step = 0;
 }
 
-
-// Simulate Ctrl+Z when Z is held down
 /*
+// Simulate Ctrl+Z when Z is held down
 void on_dance_z(qk_tap_dance_state_t *state, void *user_data) {
     if(state->count == 3) {
         tap_code16(US_Z);
@@ -491,13 +459,12 @@ void dance_w_reset(qk_tap_dance_state_t *state, void *user_data) {
 */
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_caps, dance_caps_finished, dance_caps_reset),
     [TD_APP] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_app, dance_app_finished, dance_app_reset),
     [TD_N] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_n, dance_n_finished, dance_n_reset),
     [TD_EXC] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_exc, dance_exc_finished, dance_exc_reset),
     [TD_INT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_int, dance_int_finished, dance_int_reset),
     [TD_BRC] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_brc, dance_brc_finished, dance_brc_reset),
-    /*[TD_Z] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_z, dance_z_finished, dance_z_reset),
+   /* [TD_Z] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_z, dance_z_finished, dance_z_reset),
     [TD_X] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_x, dance_x_finished, dance_x_reset),
     [TD_C] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_c, dance_c_finished, dance_c_reset),
     [TD_V] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_v, dance_v_finished, dance_v_reset),
@@ -505,5 +472,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_A] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_a, dance_a_finished, dance_a_reset),
     [TD_Q] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_q, dance_q_finished, dance_q_reset),
     [TD_W] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_w, dance_w_finished, dance_w_reset),
-    */
+*/
 };
+
+

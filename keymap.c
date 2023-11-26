@@ -7,8 +7,8 @@
 
 enum layer_number {
   _QWERTY = 0,
-  _NUMPAD,
   _MOVE,
+  _NUMPAD,
   _ADJUST,
 };
 
@@ -44,6 +44,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LGUI, OSM(MOD_LALT), MO(_NUMPAD), LSFT_T(KC_ENT), RSFT_T(KC_SPC), MO(_MOVE), OSM(MOD_RALT), TD(TD_APP)
 ),
 
+/* MOVE
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * | GESC |      |      |Wh_Up |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | Tab  |      | Btn1 |Ms_Up | Btn2 |      |                    |      | Home |  Up  | PgUp |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | CAPS | Wh_L | Ms_L | Ms_D | Ms_R | Wh_R |-------,    ,-------|      | Left | Down |Right |      |      |
+ * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
+ * |      |      |      | Wh_D |      |      |-------|    |-------|      | End  | Ins  | PgDn |      |{ & } |
+ * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
+ *                   | LGUI | OSMod| ADJ  | /   +   /       \   +  \  |      | OSMod| LGUI |
+ *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
+ *                   `----------------------------'           '------''--------------------'
+ */
+
+[_MOVE] = LAYOUT(
+  KC_TRNS, KC_NO, KC_NO, KC_WH_U, KC_NO, KC_NO,                   KC_NO, KC_NO, KC_NO,KC_NO, KC_NO, KC_NO,
+  KC_TRNS, KC_NO, KC_BTN1, KC_MS_U, KC_BTN2, KC_NO,               KC_NO, KC_HOME, KC_UP, KC_PGUP, KC_NO, KC_NO,
+  KC_CAPS, KC_WH_L, KC_MS_L, KC_MS_D, KC_MS_R,  KC_WH_R,            KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
+  KC_NO, KC_NO, KC_NO, KC_WH_D, KC_NO, KC_NO, KC_TRNS,       KC_TRNS, KC_NO, KC_END, KC_INS, KC_PGDN, KC_NO, DCBR,
+             KC_TRNS, KC_TRNS, MO(_ADJUST), KC_TRNS,           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+),
+
 /* NUMPAD
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * | GESC |  F1  |  F2  |  F3  |  F4  |      |                    |   ^  |   7  |   8  |   9  |( & ) |  /   |
@@ -62,32 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NUMPAD] = LAYOUT(
   KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO,                     KC_CIRC, KC_P7, KC_P8, KC_P9, DPRN, KC_PSLS,
   KC_TRNS, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO,                    KC_NO, KC_P4, KC_P5, KC_P6, KC_PAST, US_EQL,
-  KC_NO, KC_F9, KC_F10, KC_11, KC_12, KC_NO,                     KC_NO, KC_P1, KC_P2, KC_P3, KC_PPLS, KC_PMNS,
+  KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,                     KC_NO, KC_P1, KC_P2, KC_P3, KC_PPLS, KC_PMNS,
   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,         KC_TRNS, KC_NO, KC_P0, US_COMM, US_DOT, KC_TRNS, KC_PENT,
                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS,  MO(_ADJUST), KC_TRNS, KC_TRNS
-),
-
-/* MOVE
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * | GESC |      |      |Wh_Up |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |      | Btn1 |Ms_Up | Btn2 |      |                    |      | Home |  Up  | PgUp |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      | Wh_L | Ms_L | Ms_D | Ms_R | Wh_R |-------,    ,-------|      | Left | Down |Right |      |      |
- * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
- * |      |      |      | Wh_D |      |      |-------|    |-------|      | End  | Ins  | PgDn |      |{ & } |
- * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
- *                   | LGUI | OSMod| ADJ  | /   +   /       \   +  \  |      | OSMod| LGUI |
- *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
- *                   `----------------------------'           '------''--------------------'
- */
-
-[_MOVE] = LAYOUT(
-  KC_TRNS, KC_NO, KC_NO, KC_WH_U, KC_NO, KC_NO,                   KC_NO, KC_NO, KC_NO,KC_NO, KC_NO, KC_NO,
-  KC_TRNS, KC_NO, KC_BTN1, KC_MS_U, KC_BTN2, KC_NO,               KC_NO, KC_HOME, KC_UP, KC_PGUP, KC_NO, KC_NO,
-  KC_NO, KC_WH_L, KC_MS_L, KC_MS_D, KC_MS_R,  KC_WH_R,            KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
-  KC_NO, KC_NO, KC_NO, KC_WH_D, KC_NO, KC_NO, KC_TRNS,       KC_TRNS, KC_NO, KC_END, KC_INS, KC_PGDN, KC_NO, DCBR,
-             KC_TRNS, KC_TRNS, MO(_ADJUST), KC_TRNS,           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
 /* ADJUST
@@ -116,12 +116,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Customizing CAPS WORD behaviour to handle tap dance on TD(TD_N)
 // Otherwise, letters N and Ñ will not get capitalized
+// Other TD(TD_letters) get too slow for CAPWORD to be practical
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
         case KC_A ... KC_Z:
         case KC_MINS:
-        case TD(TD_N):  // Tap dance to send N or Ñ
+        case TD(TD_N):
+        /*case TD(TD_P):
+        case TD(TD_Q):
+        case TD(TD_W):
+        case TD(TD_A):
+        case TD(TD_Z):
+        case TD(TD_X):
+        case TD(TD_C):
+        case TD(TD_V):*/
             add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
             return true;
 
@@ -172,7 +181,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-    // This section is for Luna pet
+    // This section is for Luna pet and OLED display
         case KC_LCTL:
         case KC_RCTL:
         case KC_LGUI:
@@ -182,6 +191,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case US_DOT:
             if (record->event.pressed)
             { isJumping  = true; showedJump = false;} else {isJumping = false;} break;
+        case CAPSWRD:
+            if (record->event.pressed)
+            { caps_word  = true; } else {caps_word = false;} break;
             return false;
 
 }
