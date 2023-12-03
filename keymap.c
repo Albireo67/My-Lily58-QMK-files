@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |  F9  |  F10 |  F11 |  F12 |      |-------,    ,-------|      |   1  |   2  |   3  |   +  |  -   |
  * |------+------+------+------+------+------|Del/Ctl|    |BkS/Ctl|------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |   0  |   ,  |   .  |   ;  |Enter |
+ * |      |      |      |      |      |      |-------|    |-------|   Ñ  |   0  |   ,  |   .  |   ;  |Enter |
  * `-----------------------------------------/Shift  /     \ Shift\-----------------------------------------'
  *                   | LGUI | OSMod|      | /   +   /       \   +  \  | ADJ  | OSMod| LGUI |
  *                   |      | LAlt |      |/ Enter /         \ Space\ |      | AltGR| (APP)|
@@ -83,10 +83,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_NUMPAD] = LAYOUT(
-  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO,                     KC_CIRC, KC_P7, KC_P8, KC_P9, DPRN, KC_PSLS,
-  KC_TRNS, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO,                    KC_NO, KC_P4, KC_P5, KC_P6, KC_PAST, US_EQL,
-  KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,                     KC_NO, KC_P1, KC_P2, KC_P3, KC_PPLS, KC_PMNS,
-  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,         KC_TRNS, KC_NO, KC_P0, US_COMM, US_DOT, KC_TRNS, KC_PENT,
+  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO,                      S(US_6), US_7, US_8, US_9, DPRN, KC_PSLS,
+  KC_TRNS, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO,                    KC_NO,  US_4, US_5, US_6, KC_PAST, US_EQL,
+  KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,                     KC_NO, US_1, US_2, US_3, KC_PPLS, KC_PMNS,
+  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,        KC_TRNS, ALGR(US_N), US_0, US_COMM, US_DOT, KC_TRNS, KC_PENT,
                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS,  MO(_ADJUST), KC_TRNS, KC_TRNS
 ),
 
