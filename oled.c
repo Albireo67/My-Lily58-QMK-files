@@ -146,6 +146,7 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
     }
 }
 
+
 void render_status_main(void) {
     oled_write("L", layer_state_is(1));
     oled_write("-", false);
@@ -159,9 +160,9 @@ void render_status_main(void) {
     oled_write_ln("", false);
 
     if (layer_state_is(1)) {
-        oled_write_ln("NUM P", false);
-    } else if (layer_state_is(2)) {
         oled_write_ln("MOVE", false);
+    } else if (layer_state_is(2)) {
+        oled_write_ln("NUM P", false);
     } else if (layer_state_is(3)) {
         oled_write_ln(" ADJ", false);
     } else {
@@ -185,6 +186,7 @@ void render_status_secondary(void) {
     oled_write_ln("", false);
     oled_write_ln("=====", false);
 
+/*
     // Capturing CAPS_WORD state
     void caps_word_set_user(bool active) {
     oled_set_cursor(0, 5);
@@ -202,6 +204,8 @@ void render_status_secondary(void) {
         oled_write_ln("=====", false);
      }
 }
+*/
+
 /*
     if (caps_word) {
         oled_write_ln("+++++", false);
@@ -223,9 +227,9 @@ void render_status_secondary(void) {
      }
 */
      //return false;
-    oled_set_cursor(0, 14);
-    oled_write_ln("2022", false);
-    oled_write_ln("lnxd0", false);
+    oled_set_cursor(0, 13);
+    oled_write_ln("2023", false);
+    oled_write_ln("JFMA", false);
 }
 
 
